@@ -12,6 +12,13 @@
         "*.c": "c",
         "*.cpp": "cpp",
         "*.hpp": "cpp",
-        "xstddef": "c"
-    }
+        "xstddef": "c",
+        "xiosbase": "c",
+        "xlocale": "c",
+        "chrono": "c",
+        "random": "c",
+        "string": "c",
+        "xstring": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false
 }

@@ -23,20 +23,29 @@
 
 #define SONG(notes...) { notes }
 
+#define WHOLE_LENGTH         64
+#define HALF_LENGTH          32
+#define QUARTER_LENGTH       16
+#define EIGHTH_LENGTH        8
+#define SIXTEENTH_LENGTH     4
+#define THIRTYSECOND_LENGTH  2
+#define SIXTYFOURTH_LENGTH   1
 
 // Note Types
 #define MUSICAL_NOTE(note, duration)   {(NOTE##note), duration}
-#define WHOLE_NOTE(note)               MUSICAL_NOTE(note, 64)
-#define HALF_NOTE(note)                MUSICAL_NOTE(note, 32)
-#define QUARTER_NOTE(note)             MUSICAL_NOTE(note, 16)
-#define EIGHTH_NOTE(note)              MUSICAL_NOTE(note,  8)
-#define SIXTEENTH_NOTE(note)           MUSICAL_NOTE(note,  4)
+#define WHOLE_NOTE(note)               MUSICAL_NOTE(note, WHOLE_LENGTH)
+#define HALF_NOTE(note)                MUSICAL_NOTE(note, HALF_LENGTH)
+#define QUARTER_NOTE(note)             MUSICAL_NOTE(note, QUARTER_LENGTH)
+#define EIGHTH_NOTE(note)              MUSICAL_NOTE(note, EIGHTH_LENGTH)
+#define SIXTEENTH_NOTE(note)           MUSICAL_NOTE(note, SIXTEENTH_LENGTH)
+#define THIRTYSECOND_NOTE(note)        MUSICAL_NOTE(note, THIRTYSECOND_LENGTH)
 
-#define WHOLE_DOT_NOTE(note)           MUSICAL_NOTE(note, 64+32)
-#define HALF_DOT_NOTE(note)            MUSICAL_NOTE(note, 32+16)
-#define QUARTER_DOT_NOTE(note)         MUSICAL_NOTE(note, 16+8)
-#define EIGHTH_DOT_NOTE(note)          MUSICAL_NOTE(note,  8+4)
-#define SIXTEENTH_DOT_NOTE(note)       MUSICAL_NOTE(note,  4+2)
+#define WHOLE_DOT_NOTE(note)           MUSICAL_NOTE(note, WHOLE_LENGTH+HALF_LENGTH)
+#define HALF_DOT_NOTE(note)            MUSICAL_NOTE(note, HALF_LENGTH+QUARTER_LENGTH)
+#define QUARTER_DOT_NOTE(note)         MUSICAL_NOTE(note, QUARTER_LENGTH+EIGHTH_LENGTH)
+#define EIGHTH_DOT_NOTE(note)          MUSICAL_NOTE(note, EIGHTH_LENGTH+SIXTEENTH_LENGTH)
+#define SIXTEENTH_DOT_NOTE(note)       MUSICAL_NOTE(note, SIXTEENTH_LENGTH+THIRTYSECOND_LENGTH)
+#define THIRTYSECOND_DOT_NOTE(note)    MUSICAL_NOTE(note, THIRTYSECOND_LENGTH+SIXTYFOURTH_LENGTH)
 
 // Note Type Shortcuts
 #define M__NOTE(note, duration)        MUSICAL_NOTE(note, duration)
@@ -45,11 +54,13 @@
 #define Q__NOTE(n)                     QUARTER_NOTE(n)
 #define E__NOTE(n)                     EIGHTH_NOTE(n)
 #define S__NOTE(n)                     SIXTEENTH_NOTE(n)
+#define T__NOTE(n)                     THIRTYSECOND_NOTE(n)
 #define WD_NOTE(n)                     WHOLE_DOT_NOTE(n)
 #define HD_NOTE(n)                     HALF_DOT_NOTE(n)
 #define QD_NOTE(n)                     QUARTER_DOT_NOTE(n)
 #define ED_NOTE(n)                     EIGHTH_DOT_NOTE(n)
 #define SD_NOTE(n)                     SIXTEENTH_DOT_NOTE(n)
+#define TD_NOTE(n)                     THIRTYSECOND_DOT_NOTE(n)
 
 // Note Timbre
 // Changes how the notes sound

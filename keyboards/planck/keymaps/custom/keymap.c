@@ -45,14 +45,14 @@ const uint16_t PROGMEM fn_actions[] = {
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-    [0]  = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS)
+    [0] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS)
 };
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 
-#define SFT_CAP   TD(0)
-#define SFT_ENT   FUNC(0)
+#define SFT_CAP TD(0)
+#define SFT_ENT FUNC(0)
 // #define LOCK      FUNC(1)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -112,37 +112,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Lower
  * ,-----------------------------------------------------------------------------------.
- * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Del  |
+ * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Bksp |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Caps |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   _  |   +  |   {  |   }  |  |   |
+ * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   _  |   +  |   {  |   }  |  |   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO ~ |ISO | | Home | End  |      |
+ * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |      | Home | End  | Ins  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Prev | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-    KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_DEL,
-    KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  S(KC_NUHS), S(KC_NUBS), KC_HOME, KC_END,  _______,
-    _______, _______, _______, _______, _______, _______, _______, _______,    KC_MPRV,    KC_VOLD, KC_VOLU, KC_MPLY
+    KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
+    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
+    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, KC_HOME, KC_END,  KC_INS,  _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Del  |
+ * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Caps |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
+ * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |Pg Up |Pg Dn |      |
+ * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |      |Pg Up |Pg Dn | Ins  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_grid(
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
-    KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NUHS, KC_NUBS, KC_PGUP, KC_PGDN, _______,
+    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
+    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, KC_PGUP, KC_PGDN, KC_INS,  _______,
     _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
@@ -186,33 +186,62 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-#define THIRTYSECOND_NOTE(note)        MUSICAL_NOTE(note,  2)
-#define THIRTYSECOND_DOT_NOTE(note)    MUSICAL_NOTE(note,  2+1)
-
-#define T__NOTE(n)                     THIRTYSECOND_NOTE(n)
-#define TD_NOTE(n)                     THIRTYSECOND_DOT_NOTE(n)
-
 #define MARIO_PIPE  \
-    E__NOTE(_A5  ), \
+    S__NOTE(_A5  ), \
     S__NOTE(_D5  ), \
     S__NOTE(_G4  ), \
     S__NOTE(_C4  ), \
     S__NOTE(_F3  ), \
     S__NOTE(_BF2 ), \
-    E__NOTE(_REST), \
-    E__NOTE(_A5  ), \
+    ED_NOTE(_REST), \
+    S__NOTE(_A5  ), \
     S__NOTE(_D5  ), \
     S__NOTE(_G4  ), \
     S__NOTE(_C4  ), \
     S__NOTE(_F3  ), \
     S__NOTE(_BF2 ), \
-    E__NOTE(_REST), \
-    E__NOTE(_A5  ), \
+    ED_NOTE(_REST), \
+    S__NOTE(_A5  ), \
     S__NOTE(_D5  ), \
     S__NOTE(_G4  ), \
     S__NOTE(_C4  ), \
     S__NOTE(_F3  ), \
     S__NOTE(_BF2 )
+
+#define BUMBLEBEE_SHORT \
+    SD_NOTE(_A5), \
+    SD_NOTE(_GS5), \
+    SD_NOTE(_G5), \
+    SD_NOTE(_FS5), \
+    SD_NOTE(_F5), \
+    SD_NOTE(_AS5), \
+    SD_NOTE(_A5), \
+    SD_NOTE(_GS5), \
+    SD_NOTE(_A5), \
+    SD_NOTE(_GS5), \
+    SD_NOTE(_G5), \
+    SD_NOTE(_FS5), \
+    SD_NOTE(_F5), \
+    SD_NOTE(_FS5), \
+    SD_NOTE(_G5), \
+    SD_NOTE(_GS5), \
+    SD_NOTE(_A5), \
+    SD_NOTE(_GS5), \
+    SD_NOTE(_G5), \
+    SD_NOTE(_FS5), \
+    SD_NOTE(_F5), \
+    SD_NOTE(_AS5), \
+    SD_NOTE(_A5), \
+    SD_NOTE(_GS5), \
+    SD_NOTE(_A5), \
+    SD_NOTE(_GS5), \
+    SD_NOTE(_G5), \
+    SD_NOTE(_FS5), \
+    SD_NOTE(_F5), \
+    SD_NOTE(_FS5), \
+    SD_NOTE(_G5), \
+    SD_NOTE(_GS5), \
+    SD_NOTE(_A5),
 
 #ifdef AUDIO_ENABLE
   float plover_song[][2]     = SONG(MARIO_MUSHROOM);

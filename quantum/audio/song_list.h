@@ -448,19 +448,22 @@
     H__NOTE(_CS5), \
     Q__NOTE(_E5 ), \
     H__NOTE(_FS5), \
-    H__NOTE(_D5 ), \
+    H__NOTE(_D5 ),
 
 #define VICTORY_FANFARE_SHORT \
     ED_NOTE(_C6), \
+    S__NOTE(_REST), \
     ED_NOTE(_C6), \
+    S__NOTE(_REST), \
     ED_NOTE(_C6), \
-    ED_NOTE(_C6), \
-    W__NOTE(_REST), \
-    QD_NOTE(_GS5), \
-    QD_NOTE(_AS5), \
-    Q__NOTE(_C6), \
+    S__NOTE(_REST), \
+    HD_NOTE(_C6), \
+    HD_NOTE(_GS5), \
+    HD_NOTE(_AS5), \
+    QD_NOTE(_C6), \
+    E__NOTE(_REST), \
     Q__NOTE(_AS5), \
-    Q__NOTE(_C6), \
+    HD_NOTE(_C6),
 
 #define ALL_STAR \
     H__NOTE(_AS4), W__NOTE(_FS4), Q__NOTE(_FS4), Q__NOTE(_DS4), H__NOTE(_FS4), W__NOTE(_FS4), Q__NOTE(_FS4), Q__NOTE(_DS4), \
